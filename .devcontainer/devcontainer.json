@@ -34,9 +34,7 @@
 				"formulahendry.auto-close-tag",
 				"mathiasfrohlich.kotlin",
 				"vscode-icons-team.vscode-icons"
-
 			]
 		}
-	},
-	"remoteUser": "root"
+	}
 }
