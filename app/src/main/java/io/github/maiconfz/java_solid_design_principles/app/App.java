@@ -3,19 +3,26 @@
  */
 package io.github.maiconfz.java_solid_design_principles.app;
 
-import io.github.maiconfz.java_solid_design_principles.list.LinkedList;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.tinylog.Logger;
 
-import static io.github.maiconfz.java_solid_design_principles.utilities.StringUtils.join;
-import static io.github.maiconfz.java_solid_design_principles.utilities.StringUtils.split;
-import static io.github.maiconfz.java_solid_design_principles.app.MessageUtils.getMessage;
-
-import org.apache.commons.text.WordUtils;
-
+@SpringBootApplication
 public class App {
     public static void main(String[] args) {
-        LinkedList tokens;
-        tokens = split(getMessage());
-        String result = join(tokens);
-        System.out.println(WordUtils.capitalize(result));
+        SpringApplication.run(App.class, args);
+    }
+
+    @Bean
+    public CommandLineRunner run() {
+        return new CommandLineRunner() {
+            @Override
+            public void run(String... args) throws Exception {
+                Logger.info("App started...");
+
+            }
+        };
     }
 }
